@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Beauty | Editorial & Profiles</title>
+    
+    <!-- Eksternal Typography -->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700&f[]=satoshi@700,500,400,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN & Konfigurasi -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgBase: '#f2f2f2',
+                        textMain: '#111111',
+                        textSec: '#b6b5b5',
+                        textTertiary: '#838282',
+                        borderDark: 'rgba(30, 30, 30, 0.1)',
+                        footerBg: '#1e1e1e',
+                        footerText: 'rgba(246, 246, 246, 0.6)',
+                    },
+                    fontFamily: {
+                        clash: ['Clash Display', 'sans-serif'],
+                        satoshi: ['Satoshi', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    transitionTimingFunction: {
+                        'brutal': 'cubic-bezier(0.77, 0, 0.175, 1)',
+                    },
+                    letterSpacing: {
+                        'tighter': '-0.05em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- CSS Kustom untuk Efek Echo Stack & Micro-Interactions -->
+    <style>
+        body { background-color: #f2f2f2; color: #111111; }
+        
+        .echo-wrapper { position: relative; display: inline-block; }
+        .echo-layer { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            white-space: nowrap; 
+            pointer-events: none; 
+            user-select: none;
+        }
+        
+        .clip-reveal {
+            clip-path: inset(0 0 0 0);
+            transition: clip-path 700ms cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .group:hover .clip-reveal {
+            clip-path: inset(3% 3% 3% 3%);
+        }
+    </style>
+</head>
+<body class="font-satoshi font-medium antialiased overflow-x-hidden">
+
+    <!-- 1. Sticky Navbar -->
+    <nav class="fixed top-0 left-0 w-full h-[80px] bg-bgBase/90 backdrop-blur-[12px] border-b border-borderDark z-50 flex items-center justify-between px-6 md:px-12">
+        <div class="font-clash font-bold text-xl tracking-tighter">LABORATOIRE</div>
+        <div class="hidden md:flex gap-8 text-[14px] uppercase tracking-wide">
+            <a href="#" class="text-textMain hover:text-textSec transition-colors duration-[120ms]">Skincare</a>
+            <a href="#" class="text-textMain hover:text-textSec transition-colors duration-[120ms]">Makeup</a>
+            <a href="#profiles" class="text-textMain hover:text-textSec transition-colors duration-[120ms]">Profiles</a>
+            <a href="#" class="text-textMain hover:text-textSec transition-colors duration-[120ms]">Journal</a>
+        </div>
+        <a href="#" class="px-6 py-2 border border-[#1e1e1e] rounded-full text-[14px] uppercase tracking-wide hover:bg-[#111111] hover:text-[#f2f2f2] transition-colors duration-300">
+            Shop Now
+        </a>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <header class="w-full min-h-[70vh] md:min-h-[100vh] flex flex-col items-center justify-center pt-[80px]">
+        <div class="echo-wrapper font-clash font-bold leading-[0.9] tracking-tighter text-[20vw] md:text-[11vw] max-w-full">
+            <div class="echo-layer text-[#d9d9d9] -translate-x-[0.16em] -translate-y-[0.16em] -z-40" aria-hidden="true">SKIN</div>
+            <div class="echo-layer text-[#d1d1d1] -translate-x-[0.12em] -translate-y-[0.12em] -z-30" aria-hidden="true">SKIN</div>
+            <div class="echo-layer text-[#c9c9c9] -translate-x-[0.08em] -translate-y-[0.08em] -z-20" aria-hidden="true">SKIN</div>
+            <div class="echo-layer text-[#bfbfbf] -translate-x-[0.04em] -translate-y-[0.04em] -z-10" aria-hidden="true">SKIN</div>
+            <h1 class="relative text-textMain z-10">SKIN</h1>
+        </div>
+        <p class="font-satoshi text-textTertiary mt-12 text-lg md:text-xl tracking-wide uppercase text-center">Clinical skincare. Editorial beauty. No noise.</p>
+    </header>
+
+    <!-- 3. Philosophy Section -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 py-24 flex flex-col items-center">
+        <div class="w-px h-32 bg-[#1e1e1e] opacity-10 mb-16"></div>
+        
+        <h2 class="font-clash text-4xl md:text-6xl text-center leading-tight mb-24 max-w-5xl tracking-tighter">
+            Beauty is not added. <br> It is <em class="font-serif italic font-normal">revealed</em>.
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left w-full">
+            <div>
+                <h3 class="font-bold text-lg mb-4">Formulated</h3>
+                <p class="font-normal text-textTertiary leading-relaxed">Bahan aktif berbasis riset dalam dosis klinis yang transparan. Tanpa klaim berlebihan, hanya hasil yang terukur.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Ritual</h3>
+                <p class="font-normal text-textTertiary leading-relaxed">Sistem rutinitas pagi dan malam yang dirancang untuk kesederhanaan. Terkurasi, esensial, dan sangat bisa diulang.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Skin First</h3>
+                <p class="font-normal text-textTertiary leading-relaxed">Produk *complexion* dan pigmen yang bekerja secara simbiotik. Menghormati *skin barrier* di atas segalanya.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Asymmetrical Showcase Grid -->
+    <section class="max-w-screen-xl mx-auto px-6 md:px-12 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center">
+            <div class="col-span-1 md:col-span-5 group relative rounded-sm overflow-hidden aspect-square bg-white">
+                <div class="w-full h-full clip-reveal">
+                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200" alt="Serum Texture" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700 ease-brutal">
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-3 group relative rounded-[9999px] h-[400px] overflow-hidden bg-white flex items-center justify-center mt-8 md:mt-0">
+                <div class="absolute inset-0 w-full h-full clip-reveal">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800" alt="Model" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700 ease-brutal">
+                </div>
+                <div class="absolute w-[85%] h-[85%] border border-[#f2f2f2]/60 rounded-[9999px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-brutal z-10 flex items-center justify-center">
+                    <span class="text-[#f2f2f2] font-satoshi font-bold tracking-widest uppercase text-xs text-center px-4">The Ritual — 03</span>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-4 group relative rounded-sm h-[400px] overflow-hidden bg-white mt-8 md:mt-0">
+                <div class="w-full h-full clip-reveal">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=800" alt="Dropper Bottle" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700 ease-brutal">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         HALAMAN PROFIL CV 1: ANGLINE CHRISTELLA
+         ========================================== -->
+    <section id="profiles" class="max-w-screen-2xl mx-auto px-6 md:px-12 py-24 border-t border-borderDark mt-12">
+        <!-- Subheading penanda halaman profil -->
+        <div class="mb-12 flex items-center gap-4">
+            <div class="w-8 h-px bg-textMain"></div>
+            <span class="font-bold uppercase tracking-widest text-xs">Profile 01</span>
+        </div>
+        
+        <!-- Massive Name -->
+        <h2 class="font-clash font-bold text-5xl md:text-8xl tracking-tighter leading-[0.9] mb-16 uppercase break-words">
+            Angline <br> <em class="font-serif italic font-normal text-textTertiary">Christella</em> Tanu
+        </h2>
+
+        <!-- Bio Introduction -->
+        <div class="max-w-3xl mb-20 text-lg md:text-xl font-light leading-relaxed text-textTertiary">
+            Saya adalah pribadi yang mampu bekerja sama dengan baik dalam tim, memiliki kemampuan komunikasi yang baik, dan terbuka terhadap ide maupun pendapat orang lain. Mampu beradaptasi cepat dalam berbagai kegiatan organisasi dengan <strong class="font-medium text-textMain">tanggung jawab penuh</strong>.
+        </div>
+
+        <!-- 3-Column Detail Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 border-t border-borderDark pt-12">
+            <!-- Kolom 1: Pendidikan & Organisasi -->
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Riwayat Pendidikan</h4>
+                <ul class="space-y-4 mb-10">
+                    <li class="border-l-2 border-textMain pl-4">
+                        <div class="font-bold text-sm">SMA BPK Penabur Taman Holis Indah</div>
+                        <div class="text-xs text-textTertiary mt-1">2024 — 2027</div>
+                    </li>
+                    <li class="border-l-2 border-borderDark pl-4">
+                        <div class="font-bold text-sm">SMP BPK Penabur Taman Holis Indah</div>
+                        <div class="text-xs text-textTertiary mt-1">2021 — 2024</div>
+                    </li>
+                    <li class="border-l-2 border-borderDark pl-4">
+                        <div class="font-bold text-sm">SD BPK Penabur Taman Holis Indah</div>
+                        <div class="text-xs text-textTertiary mt-1">2015 — 2021</div>
+                    </li>
+                </ul>
+
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Organisasi</h4>
+                <div class="border-l-2 border-textMain pl-4">
+                    <div class="font-bold text-sm">OSIS Hebron</div>
+                    <div class="text-xs text-textTertiary mt-1">2023 — 2024</div>
+                </div>
+            </div>
+
+            <!-- Kolom 2: Prestasi & Sertifikat -->
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Prestasi</h4>
+                <ul class="space-y-6 mb-10">
+                    <li>
+                        <div class="font-bold text-sm">Juara 3 — DANKOPASGAT CUP 2023</div>
+                        <div class="text-sm text-textTertiary mt-1 leading-snug">600 Yard Tactical Prone Ladies Individual</div>
+                    </li>
+                    <li>
+                        <div class="font-bold text-sm">Juara 3 — Kejuaraan Nasional Menembak</div>
+                        <div class="text-sm text-textTertiary mt-1 leading-snug">F-Class F-Junior 600 Yard</div>
+                    </li>
+                </ul>
+
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Sertifikat Khusus</h4>
+                <div>
+                    <div class="font-bold text-sm">OCAC, Republic of China (Taiwan)</div>
+                    <div class="text-sm text-textTertiary mt-1 leading-snug">2023 Overseas Compatriot Youth Taiwan Experience Program</div>
+                </div>
+            </div>
+
+            <!-- Kolom 3: Kemampuan & Kontak -->
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Kompetensi</h4>
+                <div class="flex flex-wrap gap-2 mb-12">
+                    <span class="px-3 py-1 border border-borderDark rounded-full text-xs font-bold uppercase tracking-wider">Kreatif</span>
+                    <span class="px-3 py-1 border border-borderDark rounded-full text-xs font-bold uppercase tracking-wider">Kepemimpinan</span>
+                    <span class="px-3 py-1 border border-borderDark rounded-full text-xs font-bold uppercase tracking-wider">Negosiasi</span>
+                    <span class="px-3 py-1 border border-borderDark rounded-full text-xs font-bold uppercase tracking-wider">Adaptasi Cepat</span>
+                    <span class="px-3 py-1 border border-borderDark rounded-full text-xs font-bold uppercase tracking-wider">Tanggung Jawab</span>
+                </div>
+
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Koneksi</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="mailto:angelinect1@gmail.com" class="hover:text-textTertiary transition-colors">angelinect1@gmail.com</a></li>
+                    <li>+62 821-1511-9098</li>
+                    <li class="text-textTertiary leading-snug pt-2">Jl. Taman Kopo Indah 3 <br> Blok E7 No 6, Bandung</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================
+         HALAMAN PROFIL CV 2: ZEVANYA RENATA
+         ========================================== -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-12 py-24 border-t border-borderDark">
+        <!-- Subheading penanda halaman profil -->
+        <div class="mb-12 flex items-center gap-4">
+            <div class="w-8 h-px bg-textMain"></div>
+            <span class="font-bold uppercase tracking-widest text-xs">Profile 02</span>
+        </div>
+        
+        <!-- Massive Name -->
+        <h2 class="font-clash font-bold text-5xl md:text-8xl tracking-tighter leading-[0.9] mb-16 uppercase break-words">
+            Zevanya <br> <em class="font-serif italic font-normal text-textTertiary">Renata</em> Anastasia
+        </h2>
+
+        <!-- Bio Introduction -->
+        <div class="max-w-3xl mb-20 text-lg md:text-xl font-light leading-relaxed text-textTertiary">
+            Siswa SMA aktif dengan pengalaman komprehensif sebagai <strong class="font-medium text-textMain">hairstylist</strong> dan <strong class="font-medium text-textMain">Make-Up Artist (MUA)</strong> di berbagai acara sekolah. Berorientasi pada detail, kreatif, dan siap mengembangkan karier di bidang tata rias serta *fashion*.
+        </div>
+
+        <!-- 3-Column Detail Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 border-t border-borderDark pt-12">
+            <!-- Kolom 1: Pendidikan -->
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Riwayat Pendidikan</h4>
+                <ul class="space-y-4">
+                    <li class="border-l-2 border-textMain pl-4">
+                        <div class="font-bold text-sm">SMA BPK Penabur Holis</div>
+                        <div class="text-xs text-textTertiary mt-1">2024 — 2027</div>
+                    </li>
+                    <li class="border-l-2 border-borderDark pl-4">
+                        <div class="font-bold text-sm">SMP BPK Penabur Holis</div>
+                        <div class="text-xs text-textTertiary mt-1">2021 — 2024</div>
+                    </li>
+                    <li class="border-l-2 border-borderDark pl-4">
+                        <div class="font-bold text-sm">SD BPK Penabur Holis</div>
+                        <div class="text-xs text-textTertiary mt-1">2015 — 2021</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Kolom 2: Pengalaman -->
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Pengalaman Praktik</h4>
+                <ul class="space-y-8">
+                    <li>
+                        <div class="font-bold text-sm mb-1 uppercase tracking-wide">Hairstylist</div>
+                        <div class="text-xs text-textSec font-bold mb-3">2024 — 2027</div>
+                        <p class="text-sm text-textTertiary leading-snug">Berperan sebagai *hairstylist* untuk perlombaan, pentas seni, acara ulang tahun, dan kebutuhan tata rambut sehari-hari di lingkungan sekolah.</p>
+                    </li>
+                    <li>
+                        <div class="font-bold text-sm mb-1 uppercase tracking-wide">Make-Up Artist (MUA)</div>
+                        <div class="text-xs text-textSec font-bold mb-3">2025 — 2027</div>
+                        <p class="text-sm text-textTertiary leading-snug">Menangani tata rias untuk berbagai acara sekolah resmi, perlombaan, dan pentas teatrikal/seni.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Kolom 3: Kemampuan & Kontak -->
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Keahlian Spesifik</h4>
+                <ul class="space-y-3 mb-12 text-sm">
+                    <li class="flex items-center gap-3">
+                        <div class="w-1 h-1 bg-textMain rounded-full"></div>
+                        Penataan Rambut (Sanggul, Curly, Straight)
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-1 h-1 bg-textMain rounded-full"></div>
+                        Komunikasi & Kerja Sama Tim
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-1 h-1 bg-textMain rounded-full"></div>
+                        Manajemen Waktu
+                    </li>
+                </ul>
+
+                <h4 class="font-bold uppercase tracking-widest text-xs mb-6 text-textSec">Koneksi</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="mailto:zevanya.renataa4@gmail.com" class="hover:text-textTertiary transition-colors">zevanya.renataa4@gmail.com</a></li>
+                    <li>+62 812-1831-5606</li>
+                    <li class="text-textTertiary leading-snug pt-2">Jl. Caringin, <br> Bandung, Jawa Barat</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 6. Footer (Sama seperti sebelumnya) -->
+    <footer class="bg-footerBg text-footerText border-t border-white/5 pt-16 pb-8 px-6 md:px-12 mt-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-clash font-bold text-white text-2xl tracking-tighter mb-4">LABORATOIRE</div>
+                <p class="text-sm font-normal leading-relaxed">Clinical beauty, editorially edited.</p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Explore</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Shop</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Ritual</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Journal</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Company</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#profiles" class="hover:text-white transition-colors duration-300">The Talents</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Stockists</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Connect</h5>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="#" class="hover:text-white transition-colors">hello@laboratoire.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-white/5 pt-8 text-xs text-center md:text-left flex flex-col md:flex-row justify-between">
+            <span>© 2026 Laboratoire. All rights reserved.</span>
+            <span class="mt-2 md:mt-0 uppercase tracking-widest">Swiss Minimalist Edition</span>
+        </div>
+    </footer>
+
+</body>
+</html>
